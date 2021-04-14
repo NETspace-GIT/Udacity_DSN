@@ -1,5 +1,5 @@
 # AirBNB
-Udacity - Data Scientist Nanodegree [Project 01 - Write a Data Science Blog Post]
+Udacity - Data Scientist Nanodegree [Project 01 - Write a Data Science Blog Post](https://github.com/NETspace-GIT/Udacity_DSN/blob/main/project1/Seattle_Airbnb_Analysis.ipynb)
 
 The objective of this project is to write a data science blog post on Medium. We have investigated and analysed the bookings on Airbnb platform on the city of Seattle(WA). The dataset can be found at:
 
