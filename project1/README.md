@@ -45,7 +45,7 @@ Following libraries are used during this project:
 
 ###  Conclusion
 
-From a guest point of view, it's possible to say that Seattle is more likely to provide a nice Airbnb experience, as we have seen that:
+From a guest point of view, it's possible to say that Seattle is providing a nice Airbnb experience, as we have seen that:
 
 *   The hosts seem to be thoughful and flexible, besides the fact of being close to help out with any problems;
 *   Prices for one night booking are reasonable and close for almost all the property types, but vehicles (Boats and Camper/RVs);
