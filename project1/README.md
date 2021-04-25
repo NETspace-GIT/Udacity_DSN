@@ -1,7 +1,6 @@
 # AirBNB
-Udacity - Data Scientist Nanodegree 
-
-Link to the blog post can be find at: [Project 01 - Write a Data Science Blog Post](https://github.com/NETspace-GIT/Udacity_DSN/blob/main/project1/Seattle_Airbnb_Analysis.ipynb)
+Udacity - Data Scientist Nanodegree [Project 01 - Write a Data Science Blog Post]
+A Blogpost talking about the results can be fount at the [Blogpost](https://github.com/NETspace-GIT/Udacity_DSN/blob/main/project1/BlogPost.ipynb)
 
 The objective of this project is to write a data science blog post on Medium. We have investigated and analysed the bookings on Airbnb platform on the city of Seattle(WA). The dataset can be found at:
 
@@ -31,22 +30,25 @@ Following libraries are used during this project:
 
 *   *listings.csv* - .csv file contatining the data from the Airbnb listed properties in Seattle(WA);
 *   *Seattle_Airbnb_Analysis.ipynb* - Jupyter notebook containing the code and the results of the analysis;
+*   *Calendar - This file contains listing ids their availability and price on a given day
+*   *Reviews - This has data from reviews, a unique ID for each reviewer, listing_id and detailed comments
 
 ## Analysis:
 
 ###   Here are the subjects mainly we try to do analysis and investigate at this project?
 
-*   ** Analyzing Hosts and differnt profiles**
+*    Analyzing Hosts and differnt profiles**
 
-*   ** Pricing Analysis**
+*   Pricing Analysis**
 
-*   ** Customer experience analysis**
+*   Customer experience analysis**
 
 ###  Conclusion
 
-From a guest point of view, it's possible to say that Seattle is more likely to provide a better Airbnb experience, as we have seen that:
+From a guest point of view, it's possible to say that Seattle is more likely to provide a nice Airbnb experience, as we have seen that:
 
 *   The hosts seem to be thoughful and flexible, besides the fact of being close to help out with any problems;
 *   Prices for one night booking are reasonable and close for almost all the property types, but vehicles (Boats and Camper/RVs);
 *   Booking reviews for all the types of properties are acceptable with high average value;
+
 
