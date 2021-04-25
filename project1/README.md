@@ -37,11 +37,11 @@ Following libraries are used during this project:
 
 ###   Here are the subjects mainly we try to do analysis and investigate at this project?
 
-*    Analyzing Hosts and differnt profiles**
+*    Analyzing Hosts and differnt profiles
 
-*   Pricing Analysis**
+*   Pricing Analysis
 
-*   Customer experience analysis**
+*   Customer experience analysis
 
 ###  Conclusion
 
