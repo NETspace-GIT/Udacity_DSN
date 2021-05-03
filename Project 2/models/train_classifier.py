@@ -20,6 +20,16 @@ from sklearn.multioutput import MultiOutputClassifier
 
 
 def load_data(database):
+    """
+    Function to load data
+    
+    Arguments:
+        database_filepath : path to SQLite db
+    Output:
+        X : feature DataFrame
+        Y : label DataFrame
+        category_names : used for data visualization (app)
+    """
     database_name = 'sqlite:///' + database
     database_engine = create_engine(database_name)
 
@@ -33,6 +43,14 @@ def load_data(database):
     return X, y, category_names
 
 def tokenize(text):
+    """
+    Tokenize function
+    
+    Arguments:
+        text : list of text messages (english)
+    Output:
+        clean_tokens : tokenized text, clean for ML modeling
+    """
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
 
     detected_urls = re.findall(url_regex, text)
@@ -56,6 +74,13 @@ def tokenize(text):
     return clean_tokens
 
 def build_model():
+    """
+    Build Model function
+    
+    This function output is a Scikit ML Pipeline.
+    
+    """
+    
     moc = MultiOutputClassifier(RandomForestClassifier())
 
     pipeline = Pipeline([
@@ -72,6 +97,19 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    Evaluate Model function
+    
+    This function applies ML pipeline to a test set and prints out
+    model performance (accuracy and f1score)
+    
+    Arguments:
+        model : Scikit ML Pipeline
+        X_test : test features
+        Y_test : test labels
+        category_names : label names (multi-output)
+    """
+    
     y_predicted = model.predict(X_test)
     print(classification_report(Y_test, y_predicted, target_names=category_names))
     #results
@@ -80,11 +118,30 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
-    # """model is saved as a pickel file here"""
+    """
+    Save Model function
+    
+    This function saves trained model as Pickle file, to be loaded later.
+    
+    Arguments:
+        model -> GridSearchCV or Scikit Pipelin object
+        model_filepath -> destination path to save .pkl file
+    
+    """
     pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():
+    """
+    Train Classifier Main function
+    
+    This function applies the Machine Learning Pipeline:
+        1) Extract data from SQLite db
+        2) Train ML model on training set
+        3) Estimate model performance on test set
+        4) Save trained model as Pickle
+    
+    """
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
