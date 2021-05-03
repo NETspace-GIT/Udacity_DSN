@@ -5,6 +5,15 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
+    """
+    Load Data function
+    
+    Arguments:
+        messages_filepath : path to messages csv file
+        categories_filepath : path to categories csv file
+    Output:
+        df : Loaded dasa as Pandas DataFrame
+    """ 
     messages_data = pd.read_csv(messages_filepath)
     categories_data = pd.read_csv(categories_filepath)
     df = messages_data.merge(categories_data, on='id')
@@ -12,6 +21,15 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+    """
+    Clean Data function
+    
+    Arguments:
+        df : raw data Pandas DataFrame
+    Outputs:
+        df : clean data Pandas DataFrame
+    """
+    
     categories_data = df['categories'].str.split(pat=';', expand=True)
     colnames = []
     row = categories_data.loc[0]
@@ -33,13 +51,28 @@ def clean_data(df):
     return df
 
 def save_data(df, database):
-
+    """
+    Save Data function
+    
+    Arguments:
+        df : Clean data Pandas DataFrame
+        database_filename : database file (.db) destination path
+    """
+    
     database_name = 'sqlite:///' + database
     database_engine = create_engine(database_name)
     df.to_sql('Disasters', database_engine, index=False, if_exists='replace') 
 
 
 def main():
+    """
+    Main Data Processing function
+    
+    This function implement the ETL pipeline:
+        1) Data extraction from .csv
+        2) Data cleaning and pre-processing
+        3) Data loading to SQLite database
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
